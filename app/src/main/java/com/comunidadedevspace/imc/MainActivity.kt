@@ -18,9 +18,10 @@ class MainActivity : AppCompatActivity() {
         val btnCalculate = findViewById<Button>(R.id.button_calculate)
 
        btnCalculate.setOnClickListener {
-            val weight = edtWeight.text
-            val height = edtHeight.text
-            Toast.makeText(this, "Peso: $weight Altura: $height", Toast.LENGTH_SHORT).show()
+           val weight = edtWeight.text.toString().toFloat()
+           val height = edtHeight.text.toString().toFloat()
+           val imc = weight/(height*height)
+           Toast.makeText(this, "IMC: $imc", Toast.LENGTH_SHORT).show()
        }
     }
 }
